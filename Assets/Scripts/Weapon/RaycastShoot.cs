@@ -39,7 +39,7 @@ public class RaycastShoot : MonoBehaviour {
             {
                 laserLine.SetPosition(1, hit.point);
 
-                PlayerHealth health = hit.collider.GetComponent<PlayerHealth>();
+                ShootableBox health = hit.collider.GetComponent<ShootableBox>();
 
                 if (health != null)
                 {

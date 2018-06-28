@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 20157191956493684}
   - component: {fileID: 124266590476707208}
   - component: {fileID: 81615138804667400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 223847795439951180}
   - component: {fileID: 114634499064091440}
   - component: {fileID: 114673740799613014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4792631883702100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 223774396975205150}
   - component: {fileID: 114535311047911036}
   - component: {fileID: 114447683598381204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UserInterface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 224651317399724228}
   - component: {fileID: 222760825407143710}
   - component: {fileID: 114787265984179858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red Dot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4925541076716594}
   - component: {fileID: 33562082353944918}
   - component: {fileID: 23238651378646290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 224112284397608306}
   - component: {fileID: 222030973505492802}
   - component: {fileID: 114207362104110414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,11 +142,8 @@ GameObject:
   - component: {fileID: 33840444346516078}
   - component: {fileID: 65838997663789602}
   - component: {fileID: 23565480714641746}
-  - component: {fileID: 114756256616722120}
-  - component: {fileID: 120994549581114898}
-  - component: {fileID: 114215325461977582}
   - component: {fileID: 82912991978495376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,14 +159,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4573698375874586}
   - component: {fileID: 143618388644259778}
+  - component: {fileID: 114296232200208774}
   - component: {fileID: 114223756965059510}
-  - component: {fileID: 114932682847892678}
+  - component: {fileID: 114755184981766108}
+  - component: {fileID: 114873426055677732}
   - component: {fileID: 114182127878432882}
   - component: {fileID: 114312342830528380}
-  - component: {fileID: 114296232200208774}
-  m_Layer: 0
+  - component: {fileID: 114094715144446144}
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,6 +461,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114094715144446144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959506554364502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4264681622889452}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 1
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0
 --- !u!114 &114182127878432882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,18 +545,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114215325461977582
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1930324280289784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62335417ecceacd4aad7d8b54f470d58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponRange: 50
 --- !u!114 &114223756965059510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -569,7 +575,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670dbe0ed9183a14da50e9d845d7efdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCamera: {fileID: 20157191956493684}
+  componentsToDisable:
+  - {fileID: 114223756965059510}
+  - {fileID: 114755184981766108}
+  - {fileID: 20157191956493684}
+  - {fileID: 81615138804667400}
+  remoteLayerName: RemotePlayer
 --- !u!114 &114312342830528380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,7 +594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 4
   m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
+  m_SyncRotationAxis: 2
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
@@ -665,22 +676,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114756256616722120
+--- !u!114 &114755184981766108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1930324280289784}
+  m_GameObject: {fileID: 1959506554364502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fd6e362dd0a9c41b1546995efb1715, type: 3}
+  m_Script: {fileID: 11500000, guid: 1884152e1e808ed4a8d4d03a0f84a473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunDamage: 1
-  fireRate: 0.25
-  weaponRange: 50
-  hitForce: 100
-  gunEnd: {fileID: 4792631883702100}
+  weapon:
+    name: Glock
+    damage: 10
+    range: 100
+  cam: {fileID: 20157191956493684}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967039
 --- !u!114 &114787265984179858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -708,7 +722,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114932682847892678
+--- !u!114 &114873426055677732
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -716,100 +730,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959506554364502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9b5a4d8ca1c69438545f9948d02c1b, type: 3}
+  m_Script: {fileID: 11500000, guid: d3f1c7e24ac22a143a4513d310c94655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  displayCurrentHealth: {fileID: 114207362104110414}
---- !u!120 &120994549581114898
-LineRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1930324280289784}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  m_Parameters:
-    serializedVersion: 2
-    widthMultiplier: 0.05
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 0
-    textureMode: 0
-    generateLightingData: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
+  maxHealth: 100
+  disableOnDeath:
+  - {fileID: 114223756965059510}
+  - {fileID: 114755184981766108}
 --- !u!124 &124266590476707208
 Behaviour:
   m_ObjectHideFlags: 1
