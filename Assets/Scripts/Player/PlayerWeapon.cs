@@ -7,4 +7,9 @@ public class PlayerWeapon {
 
     public int damage = 10;
     public int range = 100;
+
+    public float fireRate = 0f;
+
+
+    public GameObject weaponGFX;
 }
