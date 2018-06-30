@@ -4,17 +4,6 @@ using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour {
 
-    public void Setup()
-    {
-        wasEnabled = new bool[disableOnDeath.Length];
-        for (int i = 0; i < wasEnabled.Length; i++)
-        {
-            wasEnabled[i] = disableOnDeath[i].enabled;
-        }
-
-        SetDefaults();
-    }
-
     [SyncVar]
     private bool _isDead =  false;
     public bool isDead
@@ -29,9 +18,43 @@ public class Player : NetworkBehaviour {
     [SyncVar]
     private int currentHealth;
 
+    //[SerializeField]
+    //private RectTransform playerHealthBar;
+
     [SerializeField]
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
+
+    private bool initialSetup = true;
+
+    public void Setup()
+    {
+        CmdBroadcastPlayerSetup();
+    }
+
+    [Command]
+    private void CmdBroadcastPlayerSetup()
+    {
+        RpcSetupPlayerOnAllClients();
+    }
+
+    [ClientRpc]
+    private void RpcSetupPlayerOnAllClients()
+    {
+        if(initialSetup)
+        {
+            wasEnabled = new bool[disableOnDeath.Length];
+            for (int i = 0; i < wasEnabled.Length; i++)
+            {
+                wasEnabled[i] = disableOnDeath[i].enabled;
+            }
+
+            initialSetup = false;
+        }
+
+
+        SetDefaults();
+    }
 
     [ClientRpc]
     public void RpcTakeDamage(int _amount)
@@ -70,11 +93,12 @@ public class Player : NetworkBehaviour {
     IEnumerator Respawn()
     {
         yield return new WaitForSeconds(GameManager.instance.matchSettings.respawnTime);
-        SetDefaults();
 
         Transform _spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = _spawnPoint.position;
         transform.rotation = _spawnPoint.rotation;
+
+        Setup();
 
         Debug.Log(transform.name + " has RESPAWNED!");
     }
@@ -94,4 +118,22 @@ public class Player : NetworkBehaviour {
             _col.enabled = true;
 
     }
+
+    public float GetCurrentHealth()
+    {
+        float _currentHealth = (float)currentHealth / 100;
+
+        return _currentHealth;
+    }
+
+    //private void Update()
+    //{
+    //    SetPlayerHealthBar(GetCurrentHealth());
+    //}
+
+    //public void SetPlayerHealthBar(float _currentHealth)
+    //{
+    //    playerHealthBar.localScale = new Vector3(_currentHealth, 1f, 1f);
+    //}
+
 }
