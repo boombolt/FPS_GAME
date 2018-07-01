@@ -354,7 +354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsCam: {fileID: 20157191956493684}
   speed: 6
+  runSpeed: 1.5
   jumpSpeed: 8
+  crouch: 0.5
   gravity: 20
   minYaw: -60
   maxYaw: 60

@@ -56,6 +56,17 @@ public class Player : NetworkBehaviour {
         SetDefaults();
     }
 
+    //private void Update()
+    //{
+    //    if(!isLocalPlayer)
+    //    {
+    //        if(Input.GetButtonDown(KeyCode.K))
+    //        {
+    //            RpcTakeDamage(100);
+    //        }
+    //    }
+    //}
+
     [ClientRpc]
     public void RpcTakeDamage(int _amount)
     {
@@ -125,15 +136,5 @@ public class Player : NetworkBehaviour {
 
         return _currentHealth;
     }
-
-    //private void Update()
-    //{
-    //    SetPlayerHealthBar(GetCurrentHealth());
-    //}
-
-    //public void SetPlayerHealthBar(float _currentHealth)
-    //{
-    //    playerHealthBar.localScale = new Vector3(_currentHealth, 1f, 1f);
-    //}
 
 }
