@@ -37,6 +37,9 @@ public class PlayerShoot : NetworkBehaviour {
 
     void Update()
     {
+        if (InGameMenu.IsOn)
+            return;
+
         currentWeapon = weaponManger.GetCurrentWeapon();
 
         if (currentWeapon.fireRate <= 0)

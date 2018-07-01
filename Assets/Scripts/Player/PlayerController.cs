@@ -34,15 +34,21 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if (InGameMenu.IsOn)
+            return;
+
         MovementControl();
         ViewControl();
     }
 
     void Update()
     {
+        if (InGameMenu.IsOn)
+            return;
+
         Jump();
         Run();
-        Crouch();
+        //Crouch();
     }
 
     private void MovementControl()
@@ -100,15 +106,15 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void Crouch()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            fpsCam.transform.position = new Vector3(fpsCam.transform.position.x, fpsCam.transform.position.y - crouch, fpsCam.transform.position.z);
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            fpsCam.transform.position = new Vector3(fpsCam.transform.position.x, fpsCam.transform.position.y + crouch, fpsCam.transform.position.z);
-        }
-    }
+    //private void Crouch()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.LeftControl))
+    //    {
+    //        fpsCam.transform.position = new Vector3(fpsCam.transform.position.x, fpsCam.transform.position.y - crouch, fpsCam.transform.position.z);
+    //    }
+    //    else if (Input.GetKeyUp(KeyCode.LeftControl))
+    //    {
+    //        fpsCam.transform.position = new Vector3(fpsCam.transform.position.x, fpsCam.transform.position.y + crouch, fpsCam.transform.position.z);
+    //    }
+    //}
 }

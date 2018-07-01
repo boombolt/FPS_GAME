@@ -56,15 +56,9 @@ public class Player : NetworkBehaviour {
         SetDefaults();
     }
 
-    //private void Update()
+    //public void SelfKill()
     //{
-    //    if(!isLocalPlayer)
-    //    {
-    //        if(Input.GetButtonDown(KeyCode.K))
-    //        {
-    //            RpcTakeDamage(100);
-    //        }
-    //    }
+    //    RpcTakeDamage(100);
     //}
 
     [ClientRpc]
