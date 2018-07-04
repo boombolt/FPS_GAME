@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-public class PlayerUI : MonoBehaviour {
+public class PlayerUI : MonoBehaviour
+{
 
     private void Start()
     {
@@ -23,7 +25,7 @@ public class PlayerUI : MonoBehaviour {
     {
         SetPlayerHealthBar(player.GetCurrentHealth());
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleInGameMenu();
         }
@@ -56,7 +58,7 @@ public class PlayerUI : MonoBehaviour {
     {
         playerHealthBar.localScale = new Vector3(_currentHealth, 1f, 1f);
 
-        if(_currentHealth <= 0.3f)
+        if (_currentHealth <= 0.3f)
         {
             playerHealthBarImage.color = Color.red;
         }
@@ -64,7 +66,6 @@ public class PlayerUI : MonoBehaviour {
         {
             playerHealthBarImage.color = Color.white;
         }
-        
-    }
 
+    }
 }
