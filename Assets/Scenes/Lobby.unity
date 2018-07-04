@@ -229,12 +229,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 25160723}
---- !u!114 &43896467 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114510390120764992, guid: 372e55ee41074574dba27e051709ffba,
-    type: 2}
-  m_PrefabInternal: {fileID: 512710881}
-  m_Script: {fileID: 11500000, guid: 0fe89fa649fb1d54e860e36c159e6856, type: 3}
 --- !u!1 &48209474
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +240,7 @@ GameObject:
   - component: {fileID: 48209477}
   - component: {fileID: 48209476}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TITLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172.75, y: 137}
+  m_AnchoredPosition: {x: 172.75, y: 100}
   m_SizeDelta: {x: 345.5, y: 96.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48209476
@@ -292,17 +286,17 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BOOMG_FPS
+  m_Text: '[BOOMG]
 
 '
 --- !u!222 &48209477
@@ -371,7 +365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143155748
 GameObject:
@@ -687,7 +681,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 43896467}
+      - m_Target: {fileID: 1644833603}
         m_MethodName: SetRoomName
         m_Mode: 0
         m_Arguments:
@@ -865,6 +859,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114239115632928326, guid: 372e55ee41074574dba27e051709ffba, type: 2}
+    - {fileID: 114510390120764992, guid: 372e55ee41074574dba27e051709ffba, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 372e55ee41074574dba27e051709ffba, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &576295233
@@ -1796,6 +1791,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594959714}
+--- !u!1 &1644833602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1644833604}
+  - component: {fileID: 1644833603}
+  m_Layer: 0
+  m_Name: HostGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1644833603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644833602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe89fa649fb1d54e860e36c159e6856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSize: 10
+--- !u!4 &1644833604
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644833602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 513.3105, y: 210.81604, z: -1.9742903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710674833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,7 +1922,7 @@ RectTransform:
   - {fileID: 2006934953}
   - {fileID: 48209475}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1969,7 +2005,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 43896467}
+      - m_Target: {fileID: 1644833603}
         m_MethodName: CreateRoom
         m_Mode: 1
         m_Arguments:

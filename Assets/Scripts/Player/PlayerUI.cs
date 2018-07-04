@@ -5,7 +5,7 @@ public class PlayerUI : MonoBehaviour {
 
     private void Start()
     {
-        InGameMenu.IsOn = false;
+        //InGameMenu.IsOn = false;
     }
 
     [SerializeField]
@@ -29,10 +29,22 @@ public class PlayerUI : MonoBehaviour {
         }
     }
 
-    void ToggleInGameMenu()
+    public void ToggleInGameMenu()
     {
         inGameMenu.SetActive(!inGameMenu.activeSelf);
         InGameMenu.IsOn = inGameMenu.activeSelf;
+
+        if (InGameMenu.IsOn)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
     }
 
     public void SetPlayerReference(Player _player)

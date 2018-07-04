@@ -9,6 +9,17 @@ public class PlayerController : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         fpsCam = GetComponentInChildren<Camera>();
         currentSpeed = speed;
+
+        if (!InGameMenu.IsOn)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     //Public Variables
@@ -34,8 +45,8 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (InGameMenu.IsOn)
-            return;
+        //if (InGameMenu.IsOn)
+        //    return;
 
         MovementControl();
         ViewControl();
@@ -43,9 +54,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (InGameMenu.IsOn)
-            return;
-
         Jump();
         Run();
         //Crouch();
